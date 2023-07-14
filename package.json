@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "vue": "^3.3.4"
   },
   "devDependencies": {
