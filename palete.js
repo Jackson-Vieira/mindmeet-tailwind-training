@@ -1,55 +1,53 @@
 export const palette = {
   primary: {
-    main: '#3f51b5',
-    light: '#757de8',
-    dark: '#002984',
-    contrastText: '#fff'
+    light: '#9bb8e9',
+    main: '#5a7ed7',
+    dark: '#364397'
+    // contrastText: '#fff'
   },
 
   secondary: {
-    main: '#f50057',
-    light: '#ff4081',
-    dark: '#c51162',
-    contrastText: '#fff'
+    light: '#82c6b8',
+    main: '#3e8e82',
+    dark: '#254a47'
+  },
+
+  black: {
+    light: '#a4a4a4',
+    main: '#666666',
+    dark: '#383838'
+  },
+
+  gray: {
+    light: '#bdbdbd',
+    main: '#7c7c7c',
+    dark: '#464646'
+  },
+
+  white: '#ffffff',
+
+  error: {
+    light: '#ff9d9d',
+    main: '#e22020',
+    dark: '#9d1717'
   },
 
   success: {
-    main: '#4caf50',
-    light: '#81c784',
-    dark: '#388e3c',
-    contrastText: '#fff'
-  },
-
-  error: {
-    main: '#f44336',
-    light: '#e57373',
-    dark: '#d32f2f',
-    contrastText: '#fff'
+    light: '#5ff763',
+    main: '#10d71b',
+    dark: '#0f6518'
   },
 
   warning: {
-    main: '#ff9800',
-    light: '#ffb74d',
-    dark: '#f57c00',
-    contrastText: '#fff'
+    light: '#fcfd47',
+    main: '#ebd907',
+    dark: '#85610e'
   },
 
   info: {
-    main: '#2196f3',
-    light: '#64b5f6',
-    dark: '#1976d2',
-    contrastText: '#fff'
-  },
-
-  text: {
-    primary: '#212121',
-    secondary: '#757575',
-    disabled: '#bdbdbd'
-  },
-
-  background: {
-    default: '#fff',
-    paper: '#fff'
+    light: '#99bcff',
+    main: '#4f6fff',
+    dark: '#202eb3'
   },
 
   divider: '#bdbdbd'

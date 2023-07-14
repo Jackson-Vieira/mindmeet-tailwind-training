@@ -1,11 +1,12 @@
+import { palette } from './palete'
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,vue}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: palette
+    }
   },
-  plugins: [],
+  plugins: []
 }
