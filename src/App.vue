@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import SideBar from './components/SideBar/SideBar.vue'
+import Home from './modules/app/views/home/Home.vue'
 </script>
 
 <template>
-  <SideBar />
+  <Home />
 </template>
 
 <style scoped></style>

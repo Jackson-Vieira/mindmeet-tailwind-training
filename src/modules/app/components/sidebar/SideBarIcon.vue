@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-icon group">
-    <props.icon class="h-6 w-6" />
+    <props.icon class="w-full" />
     <!-- <span>
       {{ props.text }}
     </span> -->
@@ -26,9 +26,9 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .sidebar-icon {
-  @apply relative mx-auto mb-2 mt-2 flex h-12 w-12 cursor-pointer  
-  items-center justify-center rounded-3xl bg-gray-400 text-green-500
-  shadow-lg transition-all duration-200 ease-linear hover:rounded-2xl hover:bg-green-600
-  hover:text-white dark:bg-gray-800;
+  @apply relative flex h-auto w-full cursor-pointer 
+  items-center justify-center bg-opacity-0 text-slate-800
+  transition-all duration-200 ease-linear hover:rounded-lg hover:bg-green-600
+  hover:text-white;
 }
 </style>
