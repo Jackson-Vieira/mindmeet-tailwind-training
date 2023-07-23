@@ -1,5 +1,6 @@
 <template>
   <div class="m-5" :class="containerClass">
+    <!-- TODO: alerts/ProgressBar.vue -->
     <div class="absolute left-0 top-0 h-0.5 w-full bg-red-200">
       <div
         class="h-0.5 rounded-full bg-red-400"
