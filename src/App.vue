@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import ModalFactory from './components/modals/ModalFactory/index.vue'
-import Alert from './components/alerts/Alert.vue'
+import Home from '@/views/Home/index.vue'
 </script>
 
 <template>
-  <ModalFactory />
+  <Home />
 </template>
 
 <style scoped></style>
