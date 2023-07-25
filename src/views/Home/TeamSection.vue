@@ -9,10 +9,12 @@
         />
       </div>
       <div class="mt-2 text-center">
-        <h3 class="text-grat-500 text-xl font-medium capitalize">
+        <div class="text-grat-500 text-xl font-medium capitalize">
           Member name
-        </h3>
-        <p class="text-md font-medium uppercase text-indigo-600">Member role</p>
+        </div>
+        <div class="text-md font-medium uppercase text-indigo-600">
+          Member role
+        </div>
       </div>
     </div>
   </Container>
