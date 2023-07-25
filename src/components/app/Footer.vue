@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Container from './Container.vue'
+</script>
+
 <template>
   <Container>
     <div class="my-10 text-center text-sm text-gray-600">
@@ -10,9 +14,5 @@
     </div>
   </Container>
 </template>
-
-<script setup lang="ts">
-import Container from './Container.vue'
-</script>
 
 <style scoped></style>

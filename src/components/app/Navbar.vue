@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import Logo from './Logo.vue'
+
+const links = [
+  {
+    label: 'About',
+    href: '#about'
+  },
+  {
+    label: 'Contact',
+    href: '#contact'
+  },
+  {
+    label: 'Help',
+    href: '#home'
+  }
+]
+</script>
+
 <template>
   <div class="w-full">
     <nav
@@ -25,26 +44,5 @@
     </nav>
   </div>
 </template>
-
-<script setup lang="ts">
-import Logo from './Logo.vue'
-
-const links = [
-  {
-    label: 'About',
-    href: '#about'
-  },
-  {
-    label: 'Contact',
-    href: '#contact'
-  },
-  {
-    label: 'Help',
-    href: '#home'
-  }
-]
-
-// TODO: Responsive navbar
-</script>
 
 <style scoped></style>

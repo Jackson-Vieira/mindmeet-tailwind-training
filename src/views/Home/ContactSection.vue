@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import Container from '@/components/app/Container.vue'
+import { Input } from '@/components/forms'
+</script>
+
 <template>
   <Container>
     <section class="bg-white">
@@ -53,10 +58,5 @@
     </section>
   </Container>
 </template>
-
-<script setup lang="ts">
-import Container from '@/components/app/Container.vue'
-import { Input } from '@/components/forms'
-</script>
 
 <style scoped></style>

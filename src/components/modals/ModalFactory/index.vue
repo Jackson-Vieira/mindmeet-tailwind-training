@@ -1,27 +1,3 @@
-<template>
-  <template>
-    <div>
-      <Teleport to="body">
-        <div
-          v-if="state.active"
-          class="bg-black fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-opacity-50"
-          @click="handleModalToogle({ active: false })"
-        >
-          <div class="fixed mx-10 w-3/4 lg:w-1/3" @click.stop>
-            <div class="flex flex-col overflow-hidden rounded-lg bg-white">
-              <div class="flex flex-col bg-white px-12 py-10">
-                <component
-                  :is="components[state.component as keyof typeof components]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </Teleport>
-    </div>
-  </template>
-</template>
-
 <script setup lang="ts">
 import { defineAsyncComponent, onBeforeUnmount, onMounted, reactive } from 'vue'
 
@@ -67,5 +43,27 @@ const handleModalToogle = (payload: ModalFactoryState) => {
   }
 }
 </script>
+
+<template>
+  <div>
+    <Teleport to="body">
+      <div
+        v-if="state.active"
+        class="bg-black fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-opacity-50"
+        @click="handleModalToogle({ active: false })"
+      >
+        <div class="fixed mx-10 w-3/4 lg:w-1/3" @click.stop>
+          <div class="flex flex-col overflow-hidden rounded-lg bg-white">
+            <div class="flex flex-col bg-white px-12 py-10">
+              <component
+                :is="components[state.component as keyof typeof components]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
+  </div>
+</template>
 
 <style scoped></style>

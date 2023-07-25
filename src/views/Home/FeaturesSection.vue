@@ -1,15 +1,3 @@
-<template>
-  <Container class="mt-2 flex flex-wrap items-center justify-center gap-12">
-    <Feature
-      v-for="feature in features"
-      :key="feature.title"
-      :title="feature.title"
-      :description="feature.description"
-      :icon="feature.icon"
-    />
-  </Container>
-</template>
-
 <script setup lang="ts">
 import Container from '@/components/app/Container.vue'
 import Feature from './Feature.vue'
@@ -65,5 +53,17 @@ const features = [
   }
 ]
 </script>
+
+<template>
+  <Container class="mt-2 flex flex-wrap items-center justify-center gap-12">
+    <Feature
+      v-for="feature in features"
+      :key="feature.title"
+      :title="feature.title"
+      :description="feature.description"
+      :icon="feature.icon"
+    />
+  </Container>
+</template>
 
 <style scoped></style>

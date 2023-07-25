@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Container from '@/components/app/Container.vue'
+</script>
+
 <template>
   <Container class="mt-4 flex flex-col items-center text-center">
     <div>mindmeet</div>
@@ -8,9 +12,5 @@
     </p>
   </Container>
 </template>
-
-<script setup lang="ts">
-import Container from '@/components/app/Container.vue'
-</script>
 
 <style scoped></style>

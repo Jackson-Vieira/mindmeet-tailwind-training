@@ -1,30 +1,3 @@
-<template>
-  <div class="m-5" :class="containerClass">
-    <!-- TODO: alerts/ProgressBar.vue -->
-    <div class="absolute left-0 top-0 h-0.5 w-full bg-red-200">
-      <div
-        class="h-0.5 rounded-full bg-red-400"
-        :style="{ width: `${progressPercent}%` }"
-      ></div>
-    </div>
-
-    <div>
-      <div :class="iconContainerClass">
-        <!-- TODO: Change this default icon to and use dinamic render -->
-        <InformationCircleIcon class="h-6 w-6" />
-      </div>
-    </div>
-    <div class="min-w-0 flex-1 space-y-2">
-      <p class="text-base font-normal">{{ message }}</p>
-    </div>
-    <div>
-      <button class="flex rounded-md p-0.5 hover:bg-white">
-        <XMarkIcon class="h-4 w-4" />
-      </button>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { InformationCircleIcon, XMarkIcon } from '@heroicons/vue/24/solid'
 import { cva } from 'class-variance-authority'
@@ -106,3 +79,30 @@ onMounted(() => {
   }, 100)
 })
 </script>
+
+<template>
+  <div class="m-5" :class="containerClass">
+    <!-- TODO: alerts/ProgressBar.vue -->
+    <div class="absolute left-0 top-0 h-0.5 w-full bg-red-200">
+      <div
+        class="h-0.5 rounded-full bg-red-400"
+        :style="{ width: `${progressPercent}%` }"
+      ></div>
+    </div>
+
+    <div>
+      <div :class="iconContainerClass">
+        <!-- TODO: Change this default icon to and use dinamic render -->
+        <InformationCircleIcon class="h-6 w-6" />
+      </div>
+    </div>
+    <div class="min-w-0 flex-1 space-y-2">
+      <p class="text-base font-normal">{{ message }}</p>
+    </div>
+    <div>
+      <button class="flex rounded-md p-0.5 hover:bg-white">
+        <XMarkIcon class="h-4 w-4" />
+      </button>
+    </div>
+  </div>
+</template>

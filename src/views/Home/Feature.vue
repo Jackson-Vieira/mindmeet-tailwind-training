@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { FeatureCalendarIcon } from './icons/index'
+</script>
+
 <template>
   <div class="flex flex-col items-center text-center">
     <div
@@ -16,9 +20,5 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { FeatureCalendarIcon } from './icons/index'
-</script>
 
 <style scoped></style>

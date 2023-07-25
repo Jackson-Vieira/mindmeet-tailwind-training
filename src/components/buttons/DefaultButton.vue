@@ -1,9 +1,3 @@
-<template>
-  <button :class="ButtonClass">
-    <slot></slot>
-  </button>
-</template>
-
 <script setup lang="ts">
 import { cva } from 'class-variance-authority'
 import { computed } from 'vue'
@@ -31,5 +25,11 @@ const ButtonClass = computed(() =>
   })
 )
 </script>
+
+<template>
+  <button :class="ButtonClass">
+    <slot></slot>
+  </button>
+</template>
 
 <style scoped></style>

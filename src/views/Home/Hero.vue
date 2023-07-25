@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Container from '@/components/app/Container.vue'
+</script>
+
 <template>
   <Container class="flex flex-wrap">
     <div class="flex w-full items-center lg:w-1/2">
@@ -33,9 +37,5 @@
     </div>
   </Container>
 </template>
-
-<script setup lang="ts">
-import Container from '@/components/app/Container.vue'
-</script>
 
 <style scoped></style>

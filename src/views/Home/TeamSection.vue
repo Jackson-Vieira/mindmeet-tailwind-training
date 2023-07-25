@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { Container } from '@/components/app'
+</script>
+
 <template>
   <Container>
     <div class="flex flex-col items-center">
@@ -19,9 +23,5 @@
     </div>
   </Container>
 </template>
-
-<script setup lang="ts">
-import { Container } from '@/components/app'
-</script>
 
 <style scoped></style>
