@@ -13,8 +13,13 @@
         Jackson
       </div>
     </main>
-    <footer class="bg-gray-red hover:bg-red-600">
-      <div>Controls bar</div>
+    <footer>
+      <div class="flex justify-center space-x-3">
+        <!-- WRAP IN A DIV? -->
+        <button class="h-12 w-12 rounded-full bg-blue-400"></button>
+        <button class="h-12 w-12 rounded-full bg-blue-400"></button>
+        <button class="h-12 w-12 rounded-full bg-blue-400"></button>
+      </div>
     </footer>
   </div>
 </template>
