@@ -6,6 +6,9 @@ export default {
   theme: {
     extend: {
       colors: palette
+    },
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif']
     }
   },
   plugins: []
