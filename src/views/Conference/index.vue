@@ -8,8 +8,15 @@
       >
         Tempo
       </div>
-      <div class="w-full bg-green-300">Pedro</div>
-      <div class="absolute bottom-0 right-0 aspect-video w-64 bg-red-400">
+
+      <!-- #VideoWraper -->
+      <div class="flex flex-1 justify-center">
+        <video src="" class="h-full bg-blue-300"></video>
+      </div>
+
+      <div
+        class="absolute bottom-0 right-0 aspect-[3/4] w-48 bg-red-400 md:aspect-video md:w-1/4"
+      >
         Jackson
       </div>
     </main>

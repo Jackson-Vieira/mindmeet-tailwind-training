@@ -119,17 +119,71 @@
 
       <!-- CARDS -->
       <div class="relative mt-8 lg:mt-12">
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="flex flex-wrap items-start justify-center gap-12">
+          <!-- CARD CHROME -->
+          <div
+            class="flex flex-col items-center space-y-8 rounded-md p-6 text-center shadow-lg"
+          >
+            <img
+              class="h-32 w-32 rounded-full"
+              src="./images/logo-chrome.svg"
+              alt="logo chrome"
+            />
+            <div>
+              <h5 class="text-xl font-semibold">Add to chrome</h5>
+              <p class="text-sm text-gray-700">Minimum version 62</p>
+            </div>
+            <div>
+              <button class="btn bg-blue-500 capitalize text-white">
+                add & install extension
+              </button>
+            </div>
+          </div>
+          <!-- CARD CHROME -->
+          <div
+            class="flex flex-col items-center space-y-8 rounded-md p-6 text-center shadow-lg lg:mt-4"
+          >
+            <img
+              class="h-32 w-32 rounded-full"
+              src="./images/logo-chrome.svg"
+              alt="logo chrome"
+            />
+            <div>
+              <h5 class="text-xl font-semibold">Add to chrome</h5>
+              <p class="text-sm text-gray-700">Minimum version 62</p>
+            </div>
+            <div>
+              <button class="btn bg-blue-500 capitalize text-white">
+                add & install extension
+              </button>
+            </div>
+          </div>
+          <!-- CARD CHROME -->
+          <div
+            class="flex flex-col items-center space-y-8 rounded-md p-6 text-center shadow-lg lg:mt-8"
+          >
+            <img
+              class="h-32 w-32 rounded-full"
+              src="./images/logo-chrome.svg"
+              alt="logo chrome"
+            />
+            <div>
+              <h5 class="text-xl font-semibold">Add to chrome</h5>
+              <p class="text-sm text-gray-700">Minimum version 62</p>
+            </div>
+            <div>
+              <button class="btn bg-blue-500 capitalize text-white">
+                add & install extension
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- START BROWSERS -->
+    <!-- START FAQ  -->
     <section class="mt-8 lg:mt-16">
-      <!-- FEATURE BROWSERS -->
+      <!-- FAQ Heading -->
       <div class="mx-auto px-2 sm:w-3/4 lg:w-5/12">
         <h1 class="text-center text-3xl">Frequently Asked Questions</h1>
         <p class="mt-4 text-center text-gray-700">
@@ -138,10 +192,40 @@
         </p>
       </div>
 
-      <!-- Accordion -->
+      <!-- Faq Accordion -->
       <div class="relative mt-8 lg:mt-12">
         <div>
-          <div></div>
+          <ul>
+            <li>
+              <div
+                class="flex cursor-pointer items-center justify-between"
+                v-for="(item, index) in faq"
+                :key="index"
+                @click="activeFaq = index"
+              >
+                <h3 class="text-xl font-semibold">{{ item.question }}</h3>
+                <svg
+                  :class="{
+                    'rotate-180 transform': activeFaq === index
+                  }"
+                  class="h-6 w-6 text-gray-700"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6.293 6.707a1 1 0 010 1.414L2.414 12l3.879 3.879a1 1 0 11-1.414 1.414l-5.5-5.5a1 1 0 010-1.414l5.5-5.5a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <p
+                  class="mt-4 text-gray-700"
+                  v-show="activeFaq === index"
+                  v-html="item.answer"
+                ></p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -189,6 +273,7 @@
 <script setup lang="ts">
 import Container from '@/components/app/Container.vue'
 import LogoBookMark from '@/components/app/LogoBookMark.vue'
+import { ref } from 'vue'
 
 const navLinks = [
   {
@@ -219,6 +304,8 @@ const tabs = [
     component: {}
   }
 ]
+
+const activeFaq = ref(-1)
 
 const faq = [
   {

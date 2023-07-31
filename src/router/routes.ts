@@ -16,4 +16,9 @@ export const routes = [
     path: "/spotify-clone",
     component: () => import("@/views/Spotify/index.vue")
   },
+  {
+    name: "Conference",
+    path: "/conference",
+    component: () => import("@/views/Conference/index.vue")
+  },
 ]
