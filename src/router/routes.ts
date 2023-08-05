@@ -1,4 +1,4 @@
-import Home from "@/views/Home/index.vue";
+import Home from "@/views/LandingOne/index.vue";
 
 export const routes = [
   {
@@ -9,7 +9,7 @@ export const routes = [
   {
     name: "HomeTwo",
     path: "/home-two",
-    component: () => import("@/views/HomeTwo/index.vue")
+    component: () => import("@/views/LandingTwo/index.vue")
   },
   {
     name: "Spotify",
@@ -21,4 +21,9 @@ export const routes = [
     path: "/conference",
     component: () => import("@/views/Conference/index.vue")
   },
+  {
+    name: "HeroOne",
+    path: "/hero-one",
+    component: () => import("@/views/HeroOne/index.vue")
+  }
 ]
