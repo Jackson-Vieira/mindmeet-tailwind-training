@@ -12,8 +12,8 @@ export const routes = [
     component: () => import("@/views/HomeTwo/index.vue")
   },
   {
-    name: "SpotifyClone",
-    path: "/spotify-clone",
+    name: "Spotify",
+    path: "/spotify",
     component: () => import("@/views/Spotify/index.vue")
   },
   {

@@ -2,7 +2,7 @@
   <!-- # START Navbar -->
   <header>
     <Container>
-      <nav class="mt-4 flex items-start py-4 sm:mt-12">
+      <nav class="flex items-start py-4">
         <div class="py-1"><LogoBookMark /></div>
         <ul
           class="hidden flex-1 items-center justify-end gap-x-8 text-xs uppercase sm:flex"
@@ -30,7 +30,7 @@
           >
             A simple Bookmark Manager
           </h1>
-          <p class="mb-6 text-center text-gray-600 lg:text-left">
+          <p class="mb-6 text-left text-gray-600">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             recusandae ipsa officiis esse libero, molestiae blanditiis, modi,
             suscipit id voluptatem nam accusantium nulla aspernatur.
@@ -184,68 +184,90 @@
     <!-- START FAQ  -->
     <section class="mt-8 lg:mt-16">
       <!-- FAQ Heading -->
-      <div class="mx-auto px-2 sm:w-3/4 lg:w-5/12">
-        <h1 class="text-center text-3xl">Frequently Asked Questions</h1>
-        <p class="mt-4 text-center text-gray-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-          deserunt. Commodi, fugiat!
-        </p>
-      </div>
-
-      <!-- Faq Accordion -->
-      <div class="relative mt-8 lg:mt-12">
+      <Container class="mx-auto flex flex-col items-center">
         <div>
-          <ul>
-            <li>
-              <div
-                class="flex cursor-pointer items-center justify-between"
-                v-for="(item, index) in faq"
-                :key="index"
-                @click="activeFaq = index"
-              >
-                <h3 class="text-xl font-semibold">{{ item.question }}</h3>
+          <h1 class="text-center text-3xl">Frequently Asked Questions</h1>
+          <p class="mt-4 text-center text-lg text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+            deserunt. Commodi, fugiat!
+          </p>
+        </div>
+        <!-- Faq Accordion -->
+        <div class="relative mt-8 sm:w-3/4 lg:mt-12 lg:w-8/12">
+          <ul class="">
+            <li
+              class="flex cursor-pointer flex-col border-b border-gray-200 py-4 first:border-t"
+              v-for="(item, index) in faq"
+              :key="index"
+              @click="toggleFaq(index)"
+            >
+              <h3 class="flex gap-2 text-xl font-semibold">
                 <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
                   :class="{
-                    'rotate-180 transform': activeFaq === index
+                    'rotate-90': activeFaq === index
                   }"
-                  class="h-6 w-6 text-gray-700"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
                 >
                   <path
-                    fill-rule="evenodd"
-                    d="M6.293 6.707a1 1 0 010 1.414L2.414 12l3.879 3.879a1 1 0 11-1.414 1.414l-5.5-5.5a1 1 0 010-1.414l5.5-5.5a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
                 </svg>
+
+                {{ item.question }}
+              </h3>
+              <Transition name="slide-fade">
                 <p
-                  class="mt-4 text-gray-700"
+                  class="mt-2 p-2 text-gray-700"
                   v-show="activeFaq === index"
                   v-html="item.answer"
                 ></p>
-              </div>
+              </Transition>
             </li>
           </ul>
         </div>
-      </div>
+      </Container>
     </section>
 
     <!-- Contact -->
-    <section class="mt-8 lg:mt-16">
-      <div class="mx-auto px-2 text-center sm:w-3/4 lg:w-5/12">
-        <p class="uppercase">Lorem ipsum dolor sit.</p>
-        <h1 class="text-3xl">Stay up-to-date with what we're doing</h1>
-      </div>
-      <!-- Email input -->
-      <div>
-        <form action="">
-          <div>
-            <label for="email"></label>
-            <input type="email" id="email" required />
-          </div>
-          <button type="submit">Stay up</button>
-        </form>
-      </div>
+    <section class="mt-8 bg-blue-600 py-8 text-white lg:mt-16">
+      <Container
+        class="relative flex flex-col items-center justify-center space-y-12"
+      >
+        <div class="mx-auto px-2 text-center sm:w-3/4 lg:w-5/12">
+          <p class="mb-4 text-xs uppercase tracking-[0.2rem] antialiased">
+            35.000 + Already joined
+          </p>
+          <h1 class="mx-auto max-w-md text-3xl">
+            Stay up-to-date with what we're doing
+          </h1>
+        </div>
+
+        <div>
+          <form class="flex items-center space-x-4">
+            <input
+              type="email"
+              id="email"
+              required
+              class="block w-80 rounded-md py-3 pl-3 text-gray-500 placeholder:text-sm placeholder:text-gray-500"
+              placeholder="Enter your email address"
+              autocomplete="off"
+            />
+            <button
+              type="submit"
+              class="rounded-lg bg-red-400 px-5 py-3 text-sm"
+            >
+              Stay up
+            </button>
+          </form>
+        </div>
+      </Container>
     </section>
     <footer>
       <Container>
@@ -305,7 +327,15 @@ const tabs = [
   }
 ]
 
-const activeFaq = ref(-1)
+const activeFaq = ref(0)
+
+const toggleFaq = (index: number) => {
+  if (activeFaq.value === index) {
+    activeFaq.value = -1
+  } else {
+    activeFaq.value = index
+  }
+}
 
 const faq = [
   {
@@ -314,7 +344,7 @@ const faq = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laboriosam nihil consequatur minus sequi rerum odit quas nulla perferendis voluptatum asperiores velit reiciendis, fugit corporis quasi minima non provident doloremque!'
   },
   {
-    question: 'How can I request a new browser?',
+    question: 'How can I request a new?',
     answer:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laboriosam nihil consequatur minus sequi rerum odit quas nulla perferendis voluptatum asperiores velit reiciendis, fugit corporis quasi minima non provident doloremque!'
   },
@@ -334,5 +364,19 @@ const faq = [
 <style scoped lang="postcss">
 .btn {
   @apply rounded-md px-6 py-3 shadow-md transition duration-300;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>
