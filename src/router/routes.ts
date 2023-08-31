@@ -12,6 +12,11 @@ export const routes = [
     component: () => import("@/views/LandingTwo/index.vue")
   },
   {
+    name: "HeroOne",
+    path: "/hero-one",
+    component: () => import("@/views/HeroOne/index.vue")
+  },
+  {
     name: "Spotify",
     path: "/spotify",
     component: () => import("@/views/Spotify/index.vue")
@@ -21,9 +26,4 @@ export const routes = [
     path: "/conference",
     component: () => import("@/views/Conference/index.vue")
   },
-  {
-    name: "HeroOne",
-    path: "/hero-one",
-    component: () => import("@/views/HeroOne/index.vue")
-  }
 ]

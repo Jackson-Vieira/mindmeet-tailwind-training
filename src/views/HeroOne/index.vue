@@ -1,27 +1,40 @@
 <template>
-  <header class="border-b border-b-gray-200 py-2">
-    <!-- NAVBAR -->
-    <nav class="container mx-auto flex flex-col items-center p-4 sm:flex-row">
-      <div class="self-start">
-        <Logo />
-      </div>
-      <div class="hidden flex-1 items-center justify-end sm:flex">
-        <ul
-          class="flex flex-1 items-center justify-center space-x-0 text-lg text-gray-600 first-letter:flex-col sm:flex-row sm:space-x-8"
+  <!-- NAVBAR -->
+  <nav class="flex items-center justify-between p-5 shadow">
+    <div class="self-start">
+      <Logo />
+    </div>
+
+    <div class="md:hidden">
+      <button class="focus:outline-none" @click="toggleMenuResponsive">
+        <svg
+          class="h-6 w-6 text-gray-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
         >
-          <li class="cursor-pointer">Feature</li>
-          <li class="cursor-pointer">Company</li>
-          <li class="cursor-pointer">Features</li>
-          <li class="cursor-pointer">Contact</li>
-        </ul>
-        <button
-          class="rounded-md border border-indigo-600 px-8 py-3 text-center text-lg font-medium text-indigo-600 transition duration-300 ease-in-out hover:border-indigo-400 hover:text-indigo-400"
-        >
-          Sign In
-        </button>
-      </div>
-    </nav>
-  </header>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <NavMenuResponsive
+      v-if="isMenuResponsiveOpen"
+      @on-close="toggleMenuResponsive"
+    />
+
+    <ul
+      class="hidden items-center justify-end py-4 text-lg text-gray-600 md:flex"
+    >
+      <li class="mx-4 cursor-pointer md:my-0">Feature</li>
+      <li class="mx-4 cursor-pointer md:my-0">About</li>
+      <li class="mx-4 cursor-pointer md:my-0">Contact</li>
+    </ul>
+  </nav>
   <main>
     <!-- HERO -->
     <div
@@ -60,7 +73,17 @@
 </template>
 
 <script setup lang="ts">
+import NavMenuResponsive from './NavMenuResponsive.vue'
+
 import Logo from '@/components/app/Logo.vue'
+
+import { ref } from 'vue'
+
+const isMenuResponsiveOpen = ref(false)
+
+const toggleMenuResponsive = () => {
+  isMenuResponsiveOpen.value = !isMenuResponsiveOpen.value
+}
 </script>
 
 <style scoped></style>
